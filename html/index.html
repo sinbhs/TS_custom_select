@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>select</title>
+	<link rel="stylesheet" type="text/css" href="../assets/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../assets/css/select.css">
+	<script src="../assets/build/select.js" defer></script>
+</head>
+<body>
+	<div style="margin: 0 auto; padding: 100px 0; max-width: 800px;">
+		<h1 style="font-size: 30px; line-height: 1.2; margin-bottom: 20px;">타이틀</h1>
+		
+		<!--<div style="height: 1000px; background: aquamarine;"></div>-->
+		<h2 style="font-size: 16px; line-height: 1.2; margin-bottom: 15px;">기본 (select - disabled X)</h2>
+		
+		<!-- ui-select -->
+		<div class="ui-select">
+			<div class="selected-val-info">선택된 값 : <span class="fc-red"></span></div>
+			<select title="타이틀">
+				<option>전체1</option>
+				<option>전체2</option>
+				<option>전체3</option>
+				<option>전체4</option>
+				<option>전체5</option>
+				<option>전체6</option>
+			</select>
+		</div>
+		<!-- // ui-select -->
+		
+		<!-- ui-select -->
+		<div class="ui-select">
+			<div class="selected-val-info">선택된 값 : <span class="fc-red"></span></div>
+			<select title="타이틀">
+				<option>직접입력</option>
+				<option>gmail.com</option>
+				<option>naver.com</option>
+				<option>nate.com</option>
+				<option>hanmail.net</option>
+			</select>
+		</div>
+		<!-- // ui-select -->
+		
+		<h2 style="margin-top: 20px; margin-bottom: 15px; font-size: 16px; line-height: 1.2;">select 비활성화</h2>
+		<!-- ui-select -->
+		<div class="ui-select">
+			<div class="selected-val-info">선택된 값 : <span class="fc-red"></span></div>
+			<select title="타이틀" disabled>
+				<option>전체</option>
+				<option>전체</option>
+				<option>전체</option>
+			</select>
+		</div>
+		<!-- // ui-select -->
+	</div>
+</body>
+</html>
