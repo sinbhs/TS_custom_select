@@ -125,7 +125,7 @@ function uiSelectClose(selector:any | undefined):void {
 // 실행
 setUiSelect('.ui-select');
 
-// scroll, click 이벤트
+// s: document scroll, click 이벤트
 document.addEventListener('scroll', () => {
     uiSelectClose(undefined);
 });
@@ -133,3 +133,4 @@ document.addEventListener('scroll', () => {
 document.addEventListener('click', () => {
     uiSelectClose(undefined);
 });
+// e: document scroll, click 이벤트
