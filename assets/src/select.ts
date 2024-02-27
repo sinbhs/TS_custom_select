@@ -19,6 +19,7 @@ function setUiSelect(selector:string):void {
 
             // select가 있는 경우
             if( sel !== null  ) {
+                // 커스텀 select 구조 생성
                 const selBox:any = document.createElement('div');
                 selBox.className = "ui-select-box";
                 selBox.innerHTML = `<button type="button" class="ui-selectmenu-button"><i class="ui-selectmenu-icon"></i><span class="ui-selectmenu-text"></span></button>
@@ -30,6 +31,7 @@ function setUiSelect(selector:string):void {
                 // 선택 옵션 값 노출 영역
                 const selValShow:Element | null = elem.querySelector('.selected-val-info .fc-red');
 
+                // select 버튼, 텍스트 변수 선언
                 let selectButton:Element | null = selBox.querySelector('.ui-selectmenu-button');
                 let selText:Element | null = selBox.querySelector('.ui-selectmenu-text');
 
@@ -66,12 +68,10 @@ function setUiSelect(selector:string):void {
                 selBox.dataset.selected = sel.options.selectedIndex;
 
                 // select option 'change' 시
-                sel.addEventListener('change', () => {
+                sel.addEventListener('change', ():void => {
                     if(selBox.dataset.selected != undefined) sel.options[selBox.dataset.selected].selected = true;
-                    if(!!selText && !!selValShow) {
-                        selText.innerHTML = sel.options[sel.selectedIndex].text;
-                        selValShow.innerHTML = sel.options[sel.selectedIndex].text;
-                    }
+                    if(!!selValShow) selValShow.innerHTML = sel.options[sel.selectedIndex].text;
+                    if(!!selText) selText.innerHTML = sel.options[sel.selectedIndex].text;
                 });
 
                 // select Open/Close
@@ -126,11 +126,11 @@ function uiSelectClose(selector:any | undefined):void {
 setUiSelect('.ui-select');
 
 // s: document scroll, click 이벤트
-document.addEventListener('scroll', () => {
+document.addEventListener('scroll', ():void => {
     uiSelectClose(undefined);
 });
 
-document.addEventListener('click', () => {
+document.addEventListener('click', ():void => {
     uiSelectClose(undefined);
 });
 // e: document scroll, click 이벤트
